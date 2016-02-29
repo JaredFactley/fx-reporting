@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSV Reports Test</title>
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<script src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/accounting.js"></script>
+<script src="js/reports.js"></script>
+<script src="js/graphs.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div id="interface" class="fileupload ">
+    <fieldset>
+      <legend>Upload your FXC Trade History CSV File</legend>
+      <input type="file" name="File Upload" id="txtFileUpload" accept=".csv">
+      </input>
+    </fieldset>
+  </div>
+  <div id="results">
+    <div id="result-table">Tables go here!</div>
+    <div id="result-graph">Graphs go here!</div>
+  </div>
+</body>
+</html>

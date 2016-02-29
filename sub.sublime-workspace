@@ -1,0 +1,436 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"h",
+				"highlightStroke"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"Label",
+				"label"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1222,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sample.csv",
+			"settings":
+			{
+				"buffer_size": 964,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 2283,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/reports.js",
+			"settings":
+			{
+				"buffer_size": 3296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "function addGraph(counter) {\n	var graphCanvas = $('<div/>').attr({\n		class: \"ct-chart ct-perfect-fourth\",\n		id: \"chart1\"\n	});\n	$('#result-graph').append(graphCanvas);\n	var chartData = getChartData(counter);\n	new Chartist.Line('#chart1', chartData);\n}\n\nfunction getChartData(counter) {\n	var dataObj = {\n		labels: [],\n		series: []\n	}\n	for (var item in counter) {\n		dataObj.label.push(item);\n		dataObj.series[0].push(counter[item])\n	}\n	return dataObj;\n}\n\n",
+			"file": "js/graphs.js",
+			"file_size": 394,
+			"file_write_time": 130869330375165955,
+			"settings":
+			{
+				"buffer_size": 452,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "testfile2.csv",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"file": "/D/apps/fceugx/settings.xml",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Jared/Dropbox/csv-reports/testfile2.csv",
+		"/C/Users/Jared/Dropbox/csv-reports/index.html",
+		"/C/Users/Jared/Dropbox/csv-reports/js/main.js",
+		"/C/Users/Jared/Dropbox/csv-reports/js/graphs.js",
+		"/C/Users/Jared/Dropbox/csv-reports/js/reports.js",
+		"/C/Users/Jared/Dropbox/indexinvest/public/js/indexinvest.js",
+		"/C/Users/Jared/Dropbox/fxcreport/js/graphs.js",
+		"/C/Users/Jared/Dropbox/fxcreport/js/reports.js",
+		"/C/Users/Jared/Dropbox/fxcreport/js/main.js",
+		"/C/Users/Jared/Dropbox/fxcreport/test1.html",
+		"/C/Users/Jared/Dropbox/indexinvest/public/js/indexTypes.js",
+		"/C/Users/Jared/Dropbox/indexinvest/public/js/etflist.js",
+		"/C/Users/Jared/Dropbox/indexinvest/includes/etflist.js",
+		"/C/Users/Jared/Dropbox/fxcreport/testfile.csv",
+		"/C/Users/Jared/Dropbox/indexinvest/templates/header.php",
+		"/C/Users/Jared/Dropbox/fxcsheet/index.html",
+		"/C/Users/Jared/Dropbox/couchpotatocalculator/templates/header.php",
+		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
+		"/C/wamp/bin/apache/apache2.4.9/conf/extra/httpd-vhosts.conf",
+		"/C/Users/Jared/Dropbox/couchpotatocalculator/public/index.php",
+		"/C/Users/Jared/Dropbox/couchpotatocalculator/templates/homepage.php",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Jared/Dropbox/indexinvest/public/index.php",
+		"/C/Users/Jared/Dropbox/indexinvest/templates/homepage.php",
+		"/C/Users/Jared/Dropbox/indexinvest/public/css/indexinvest.css",
+		"/C/Users/Jared/AppData/Local/Temp/logo2.png",
+		"/C/Users/Jared/AppData/Local/Temp/index.php",
+		"/C/Users/Jared/AppData/Local/Temp/config-3.php",
+		"/C/Users/Jared/AppData/Local/Temp/config-1.php",
+		"/C/Users/Jared/AppData/Local/Temp/functions.php",
+		"/C/Users/Jared/AppData/Local/Temp/config-2.php",
+		"/C/Users/Jared/AppData/Local/Temp/config.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"person",
+			"PERSON",
+			"createTable",
+			"rawTrades",
+			"select",
+			"updateRangeText",
+			"servername"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"rawTrades",
+			"createTable"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sample.csv",
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 2283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1287,
+								1287
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/reports.js",
+					"settings":
+					{
+						"buffer_size": 3296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2219,
+								2219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 946.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/graphs.js",
+					"settings":
+					{
+						"buffer_size": 452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "testfile2.csv",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								277,
+								277
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/apps/fceugx/settings.xml",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
