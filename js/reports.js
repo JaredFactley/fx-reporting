@@ -145,54 +145,80 @@ function cpSwapBenefit(data) {
 		//check if cp session has been created yet, if not > create
 		if (typeof cpData[cpSessId] === 'undefined') {
 			cpData[cpSessId] = new Object();
-			cpData[cpSessId].high = 0;
-			cpData[cpSessId].low = 0;
+			cpData[cpSessId].id = cpSessId;
+			//cpData[cpSessId].worst = 0;
+			cpData[cpSessId].best = 0;
 			cpData[cpSessId].win = 0;
 			cpData[cpSessId].usdrate = 1;
 			cpData[cpSessId].ccy = "";
+			cpData[cpSessId].benefit = 0;
+			cpData[cpSessId].leg2dir = "";
+			cpData[cpSessId].winbank = "";
 		}
 		//look for row with swapid
-		if (data[row].SWAPID != ""){
+		if (data[row].SWAPID != " "){
 			//iterate through data looking for swapid matching orderid
 			for (var checkRow in data){
 				//found match, far leg is sell
 				if (data[row].SWAPID == data[checkRow].ORDERID && data[row].DIRECTION == "SELL"){
 					//swap value equals far leg minus near
-					tempSettDiff = data[row].SETTLEAMT - data[checkRow].SETTLEAMT;
+					tempSettDiff = data[row].SETTLEAMT * 100 - data[checkRow].SETTLEAMT * 100;
 				}
 				//found match, far leg is buy
 				else if(data[row].SWAPID == data[checkRow].ORDERID && data[row].DIRECTION == "BUY"){
 					//swap value equals near leg minus far
-					tempSettDiff = data[checkRow].SETTLEAMT - data[row].SETTLEAMT;
+					tempSettDiff = data[checkRow].SETTLEAMT * 100 - data[row].SETTLEAMT * 100;
 				}
 			}
-			//set swav vale as high offer if higher than previous
-			if (tempSettDiff > cpData[cpSessId].high){
-				cpData[cpSessId].high = tempSettDiff;
+			//skip if unpriced
+			if (data[row].SPOTRATE != 0){
+				//set swap value as worst offer if worse than previous
+				if (typeof cpData[cpSessId].worst === 'undefined' || tempSettDiff < cpData[cpSessId].worst){
+					cpData[cpSessId].worst = tempSettDiff;
+				}
+				//set swap value as best offer if bester than previous
+				if (tempSettDiff > cpData[cpSessId].best){
+					cpData[cpSessId].best = tempSettDiff;
+				}
+				//set swap value as winning offer if winner Y
+				if (data[row].IS_WINNER_FLAG == "Y"){
+					cpData[cpSessId].win = tempSettDiff;
+					cpData[cpSessId].winbank = data[row].INST;
+				}
+				cpData[cpSessId].ccy = data[row].SETTLECCY;
+				cpData[cpSessId].usdrate = data[row].SETTLEAMT / data[row].TRADE_VOL_USD
 			}
-			//set swav vale as low offer if lower than previous
-			if (tempSettDiff < cpData[cpSessId].low){
-				cpData[cpSessId].low = tempSettDiff;
-			}
-			//set swav vale as winning offer if winner Y
-			if (data[row].IS_WINNER_FLAG == "Y"){
-				cpData[cpSessId].win = tempSettDiff;
-			}
-			cpData[cpSessId].ccy = data[row].SETTLECCY;
-			console.log(cpData[cpSessId]);
 		}
 	};
-	console.log(cpData);
+	var count = 0;
 	var cpBenefit = new Object();
+	var elseCount = 0;
 	for (var session in cpData){
-		if (cpData[session].high !== 0 && cpData[session].win !== 0){
-			cpData[session].benefit = cpData[session].win - cpData[session].high;
+		if (cpData[session].worst !== 0 && cpData[session].win !== 0){
+			cpData[session].benefit = cpData[session].win - cpData[session].worst;
 			var tempCurr = cpData[session].ccy;
 			if (typeof cpBenefit[tempCurr] === 'undefined'){
 				cpBenefit[tempCurr] = 0;
 			}
-			cpBenefit[tempCurr] += cpData[session].benefit;
+			var tempBank = cpData[session].winbank;
+			if (typeof cpBenefit[tempBank] === 'undefined'){
+				cpBenefit[tempBank] = 0;
+			}
+			var tempBenefit = cpData[session].benefit / 100
+			cpBenefit[tempCurr] += tempBenefit;
+			cpBenefit[tempBank] += tempBenefit;
+			count += 1;
+		}
+		else {
+		console.log(cpData[session].id);
+		elseCount += 1;
 		}
 	};
-	console.log(cpBenefit.USD)
+	console.log(cpData);
+	console.log(cpBenefit)
+	console.log(count);
+	console.log(elseCount);
+	for (var x in cpBenefit){
+		console.log(x + ": " + cpBenefit[x]);
+	}
 };
